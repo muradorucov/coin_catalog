@@ -1,0 +1,22 @@
+{
+  "name": "coin_catalog",
+  "version": "1.0.0",
+  "description": "A precious coin catalog web application that allows you to search for any coin by various parameters and see detailed information about it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muradorucov/coin_catalog.git"
+  },
+  "author": "Murad Orujov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muradorucov/coin_catalog/issues"
+  },
+  "homepage": "https://github.com/muradorucov/coin_catalog#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
