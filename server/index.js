@@ -77,6 +77,7 @@ app.route("/api/v1/coin/:id")
             weight,
             img_face,
             img_back,
+            short_desc,
             full_desc } = req.body
         const query = `UPDATE coins SET 
         name="${name}",category="${category}",country="${country}",composition="${composition}",
