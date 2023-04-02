@@ -55,7 +55,12 @@ app.route("/api/v1/coin/:id")
             if (err) {
                 res.status(500).send({ message: err.sqlMessage })
             }
-            res.status(200).send(data[0])
+            else if (!data.length) {
+                res.status(404).send({ message: "Coin not found !" })
+            }
+            else {
+                res.status(200).send(data)
+            }
         })
     })
     .put((req, res) => {
@@ -81,7 +86,12 @@ app.route("/api/v1/coin/:id")
             if (err) {
                 res.status(500).send({ message: err.sqlMessage })
             }
-            res.status(200).send(data)
+            else if (!data.affectedRows) {
+                res.status(404).send({ message: " Coin not found !" })
+            }
+            else {
+                res.status(200).send(data)
+            }
         })
     })
     .delete((req, res) => {
@@ -90,7 +100,12 @@ app.route("/api/v1/coin/:id")
             if (err) {
                 res.status(500).send({ message: err.sqlMessage })
             }
-            res.status(200).send(data)
+            else if (!data.affectedRows) {
+                res.status(404).send({ message: " Coin not found !" })
+            }
+            else {
+                res.status(200).send(data)
+            }
         })
     })
 const PORT = process.env.PORT || 8080
