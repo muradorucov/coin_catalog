@@ -34,11 +34,12 @@ app.route("/api/v1/coins")
             weight,
             img_face,
             img_back,
+            short_desc,
             full_desc } = req.body
         const query = `INSERT INTO coins 
-            (name,category,country,composition,quality,denomination,price,year,weight,img_face,img_back,full_desc)
+            (name,category,country,composition,quality,denomination,price,year,weight,img_face,img_back,short_desc,full_desc)
         Values
-            ("${name}","${category}","${country}","${composition}","${quality}","${denomination}","${price}","${year}","${weight}","${img_face}","${img_back}","${full_desc}");
+            ("${name}","${category}","${country}","${composition}","${quality}","${denomination}","${price}","${year}","${weight}","${img_face}","${img_back}","${short_desc}","${full_desc}");
         `
         connection.query(query, (err, data) => {
             if (err) {
@@ -80,7 +81,7 @@ app.route("/api/v1/coin/:id")
         const query = `UPDATE coins SET 
         name="${name}",category="${category}",country="${country}",composition="${composition}",
         quality="${quality}",denomination="${denomination}",price="${price}",year="${year}",
-        weight="${weight}",img_face="${img_face}",img_back="${img_back}",full_desc="${full_desc}"
+        weight="${weight}",img_face="${img_face}",img_back="${img_back}",short_desc=${short_desc},full_desc="${full_desc}"
         WHERE id=${id}`
         connection.query(query, (err, data) => {
             if (err) {
